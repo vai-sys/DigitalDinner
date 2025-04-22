@@ -7,7 +7,7 @@ const MenuItemCard = ({ item }) => {
       <div className="h-48 overflow-hidden">
         {item.image ? (
           <img 
-            src={`http://localhost:3000/uploads/${item.image}`} 
+            src={`https://digitaldinner-4lwi.onrender.com/uploads/${item.image}`} 
             alt={item.name} 
             className="w-full h-full object-cover"
           />

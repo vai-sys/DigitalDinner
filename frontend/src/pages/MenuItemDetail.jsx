@@ -102,11 +102,12 @@ const MenuItemDetail = () => {
         <div className="md:flex">
           <div className="md:w-1/2">
             {menuItem.image ? (
-              <img 
-                src={`http://localhost:3000/uploads/${menuItem.image}`} 
-                alt={menuItem.name} 
-                className="w-full h-64 md:h-full object-cover"
-              />
+            <img 
+            src={`https://digitaldinner-4lwi.onrender.com/uploads/${menuItem.image}`} 
+            alt={menuItem.name} 
+            className="w-full h-64 md:h-full object-cover"
+          />
+          
             ) : (
               <div className="w-full h-64 md:h-full bg-gray-200 flex items-center justify-center">
                 <span className="text-gray-400">No image available</span>
