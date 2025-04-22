@@ -25,13 +25,15 @@ router.use(protect);
 
 router.post('/', createOrder);
 
-router.get('/', getUserOrders);
+// router.get('/', getUserOrders);
 
 
 router.get('/:id', getOrderById);
 
 
 router.put('/:id', updateOrderStatusValidation, validate, updateOrderStatus);
+
+router.get('/user/:userId', getUserOrders);
 
 
 router.put('/:id/cancel', cancelOrder);

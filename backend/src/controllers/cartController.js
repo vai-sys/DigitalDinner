@@ -1,4 +1,4 @@
-// controllers/cartController.js
+
 const { prisma } = require('../config/db');
 const MenuItem = require('../models/menu');
 

@@ -32,7 +32,8 @@ exports.createOrder = async (req, res) => {
           menuItemId: item.menuItemId,
           name: menuItem.name,
           price: menuItem.price,
-          quantity: item.quantity
+          quantity: item.quantity,
+          imageUrl: menuItem.imageUrl,
         };
       })
     );
@@ -101,32 +102,7 @@ exports.createOrder = async (req, res) => {
   }
 };
 
-exports.getUserOrders = async (req, res) => {
-  try {
-    const orders = await prisma.order.findMany({
-      where: {
-        userId: req.user.id
-      },
-      include: {
-        orderItems: true
-      },
-      orderBy: {
-        createdAt: 'desc'
-      }
-    });
 
-    res.status(200).json({
-      success: true,
-      count: orders.length,
-      data: orders
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
-  }
-};
 
 
 exports.getOrderById = async (req, res) => {
@@ -280,5 +256,27 @@ exports.cancelOrder = async (req, res) => {
       success: false,
       error: error.message
     });
+  }
+};
+
+
+exports.getUserOrders = async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const orders = await prisma.order.findMany({
+      where: { userId },
+      include: {
+        orderItems: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.error('Error fetching user orders:', error);
+    res.status(500).json({ success: false, message: 'Error fetching user orders' });
   }
 };
