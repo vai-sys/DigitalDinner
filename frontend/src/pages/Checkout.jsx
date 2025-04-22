@@ -86,7 +86,7 @@ const Checkout = () => {
       setProcessing(true);
       setError(null);
       
-      // First update user information if needed
+     
       if (
         user.name !== contactInfo.name ||
         user.phoneNumber !== contactInfo.phoneNumber ||
@@ -99,7 +99,7 @@ const Checkout = () => {
         });
       }
       
-      // Then create the order
+   
       const orderResponse = await api.post('/orders');
       
       setNewOrderId(orderResponse.data.data.id);
@@ -286,7 +286,7 @@ const Checkout = () => {
                     <div className="flex-shrink-0 w-24 h-24 bg-gray-100 rounded-md overflow-hidden">
                       {item.menuItem.image ? (
                         <img 
-                          src={`http://localhost:3000/uploads/${item.menuItem.image}`} 
+                          src={`https://digitaldinner-4lwi.onrender.com/uploads/${item.menuItem.image}`} 
                           alt={item.menuItem.name} 
                           className="w-full h-full object-cover"
                         />

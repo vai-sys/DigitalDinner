@@ -237,7 +237,7 @@ const OrderManagement = () => {
                         {console.log("item",item)}
                         {item.imageUrl ? (
                           <img 
-                            src={item.imageUrl.startsWith('http') ? item.imageUrl : `http://localhost:3000/uploads/${item.imageUrl}`}
+                            src={item.imageUrl.startsWith('http') ? item.imageUrl : `https://digitaldinner-4lwi.onrender.com/uploads/${item.imageUrl}`}
                             alt={item.name}
                             className="h-full w-full object-cover"
                             onError={(e) => {

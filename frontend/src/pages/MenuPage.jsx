@@ -13,7 +13,7 @@ const MenuPage = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        // Only fetch available items
+       
         const url = activeCategory 
           ? `/menu?category=${activeCategory}&available=true` 
           : '/menu?available=true';
@@ -31,7 +31,7 @@ const MenuPage = () => {
     const fetchCategories = async () => {
       try {
         const response = await api.get('/menu');
-        // Extract unique categories
+       
         const allCategories = response.data.data
           .map(item => item.category)
           .filter((value, index, self) => self.indexOf(value) === index);
