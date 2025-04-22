@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'No build step required for backend'",
   "start": "node src/index.js",
   "dev": "nodemon src/index.js",
   "postinstall": "prisma generate"
