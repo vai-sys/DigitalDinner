@@ -131,7 +131,7 @@ const ShoppingCart = () => {
                     <div className="flex items-center">
                       {item.menuItem.image ? (
                         <img 
-                          src={`http://localhost:3000/uploads/${item.menuItem.image}`} 
+                          src={`https://digitaldinner-4lwi.onrender.com/uploads/${item.menuItem.image}`} 
                           alt={item.menuItem.name} 
                           className="h-16 w-16 object-cover rounded-md mr-4"
                         />

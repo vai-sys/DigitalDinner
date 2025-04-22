@@ -16,7 +16,12 @@ const app = express();
 app.use('/uploads', express.static('uploads'));
 
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://digitaldinner-2.onrender.com', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
 
 
 const authRoutes = require('./routes/authRoutes');

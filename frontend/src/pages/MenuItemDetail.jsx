@@ -35,13 +35,13 @@ const MenuItemDetail = () => {
         quantity: 1
       });
       
-      // Show success message
+     
       setNotification({
         type: 'success',
         message: `${menuItem.name} added to cart!`
       });
       
-      // Clear notification after 3 seconds
+   
       setTimeout(() => {
         setNotification(null);
       }, 3000);
